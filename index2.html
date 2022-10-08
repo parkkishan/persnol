@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="meh-circule.png">
+<title>
+  K i s h a n - Contact
+</title>
+<style>
+body{background-color: black;
+font-family:Arial, Helvetica, sans-serif;
+box-sizing: border-box;}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: rgb(233, 179, 179);
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+h3{
+  position: relative;
+  left: 19px;
+  color: white;
+}
+img{
+  position: absolute;
+  height: 69px;
+  top: 0%;
+  left: 15%;
+}
+
+
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: rgb(0, 0, 0);
+  }
+  h3{
+    position: fixed;
+    left: 19%;
+    margin: 0px;
+    padding: 0px 24px ;
+  }
+  img{
+    position: fixed;
+    height: 30px;
+    top: 1%;
+    left: 16%;
+  }
+
+  input[type=submit] {
+  background-color: #04AA6D;
+  color: rgb(233, 179, 179);
+  padding: 8px 18px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #b60d62;
+}
+
+.container {
+  margin: 12px 19px 12px 2px;
+  border-radius: 5px;
+  background-color: rgb(2, 2, 2);
+  padding: 2px 0px 0px 12px ;
+}
+}
+</style>
+</head>
+<body>
+
+<h3>Contact Form</h3>
+
+<div class="container">
+  <form onsubmit="senEmail(); reset(); return false; " method="post">
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name.." required>
+
+    <label for="lname">Email</label>
+    <input type="text" id="lname" name="Email" placeholder="Email" required>
+
+    <label for="lname">Password</label>
+    <input type="text" id="lname" name="lastname" placeholder="Password" required>
+
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your Contact Number" required>
+
+    <label for="country">Country</label>
+    <select id="country" name="country">
+      <option value="India">India</option>
+      <option value="India">Australia </option>
+      <option value="India">England</option>
+      <option value="India">Russia</option>
+      <option value="canada">Japan</option>
+      <option value="usa">USA</option>
+    </select>
+
+    <label for="subject">Subject</label>
+    <textarea id="subject" name="subject" placeholder="Write Your Thoughts" style="height:100px"></textarea>
+
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+<img src="meh-circule.png" alt="">
+
+
+<script src=" https://smtpjs.com/v3/smtp.js"></script>
+<script>
+  function sendEmail(){
+    Email.send({
+    Host : "smtp.gmail.com",
+    Username : "kshnmiskin@gmail.com",
+    Password : "password",
+    To : 'kishanmiskin890@gmail.com',
+    From : document.getElementById("email"),
+    Subject : "New Contact Form",
+    Body : "And this is the body"
+}).then(
+  message => alert(Ok)
+);
+  }
+</script>
+
+
+
+
+
+</body>
+</html>
